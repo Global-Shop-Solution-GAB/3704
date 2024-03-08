@@ -1,0 +1,33 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Last edit on: 07/20/10
+'Author: TPH
+'Hook Number: 42923
+
+V.Local.sTitle.Declare(String)
+
+F.Intrinsic.Control.If(V.Passed.crm-cbooquote,<>,"")
+	F.Intrinsic.string.Concat("Quote #",V.Passed.crm-cbooquote,V.Local.sTitle)
+        V.Passed.crm-txteventtitle.set(V.Local.sTitle)
+	' the ID set up in the event type
+	V.Passed.CRM-cboEType.Set(32769)
+	V.Passed.crm-tabprm.Set(0)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_3704_Opp_To_Quote$}$JCT$}$4/6/2016
+${$1$}$$}$$}$0$}$42923$}$CRM.NET-TOOL-GAB1$}$4/6/2016 12:20:00 PM$}$(Program: Global_Shop_CRM.exe; Screen: )
+
+Program.Sub.Comments.End
+
